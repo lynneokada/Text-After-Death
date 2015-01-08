@@ -4,10 +4,16 @@ one:
   name: MyString
   email: MyString
   password: MyString
+<<<<<<< HEAD
   confirmation_password: MyString
+=======
+>>>>>>> 12c28f6ef6aee23b79cacb0f410d77607841d472
 
 two:
   name: MyString
   email: MyString
   password: MyString
+<<<<<<< HEAD
   confirmation_password: MyString
+=======
+>>>>>>> 12c28f6ef6aee23b79cacb0f410d77607841d472
