@@ -1,10 +1,12 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+#  before_action :set_user, only: [:show, :edit, :update, :destroy]
+
+  before_action :set_user_type
 
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = user_type_class.all
   end
 
   # GET /users/1
@@ -62,6 +64,20 @@ class UsersController < ApplicationController
   end
 
   private
+
+    # allow views to access user_type
+    def set_user_type
+      @user_type = user_type
+    end
+
+    def user_type
+      User.user_types.include?(params[:type]) ? params[:type] : "User"
+    end
+
+    def user_type_class
+      user_type.constantize
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
