@@ -5,3 +5,26 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+User.create!(name:  "User 1",
+             email: "user1@textafterdeath.com",
+             password:              "foobar",
+             confirmation_password: "foobar",
+             user_type: "User"
+            )
+
+Receiver.create!(name:  "Receiver 1",
+             email: "receiver1@textafterdeath.com",
+             password:              "foobar",
+             confirmation_password: "foobar",
+             user_type: "Receiver",
+             phone_number: "0123456789"
+            )
+
+Sender.create!(name:  "Sender 1",
+             email: "sender1@textafterdeath.com",
+             password:              "foobar",
+             confirmation_password: "foobar",
+             user_type: "Sender",
+             public_key: "foobarbaz"
+            )

@@ -11,7 +11,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150108230118) do
+ActiveRecord::Schema.define(version: 20150109221806) do
+
 
   create_table "messages", force: true do |t|
     t.text     "content"
@@ -29,6 +30,10 @@ ActiveRecord::Schema.define(version: 20150108230118) do
     t.string   "confirmation_password"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
+    t.string   "user_type"
+    t.string   "phone_number"
+    t.string   "public_key"
+
   end
 
 end
