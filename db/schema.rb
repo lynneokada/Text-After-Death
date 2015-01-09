@@ -11,6 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 20150108230118) do
+
+  create_table "messages", force: true do |t|
+    t.text     "content"
+    t.string   "sender_id"
+    t.string   "public_key"
+    t.date     "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+=======
 ActiveRecord::Schema.define(version: 20150108000513) do
 
   create_table "messages", force: true do |t|
@@ -20,14 +31,21 @@ ActiveRecord::Schema.define(version: 20150108000513) do
     t.datetime "date"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+>>>>>>> 12c28f6ef6aee23b79cacb0f410d77607841d472
   end
 
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
     t.string   "password"
+<<<<<<< HEAD
+    t.string   "confirmation_password"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+=======
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+>>>>>>> 12c28f6ef6aee23b79cacb0f410d77607841d472
   end
 
 end
