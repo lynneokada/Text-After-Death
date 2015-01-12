@@ -1,8 +1,6 @@
 class UsersController < ApplicationController
 #  before_action :set_user, only: [:show, :edit, :update, :destroy]
 
-  before_action :set_user_type
-
   # GET /users
   # GET /users.json
   def index
@@ -27,10 +25,10 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    if(user_type.eql? "sender")
-      @user = Sender.new(user_params)
-    else
+    if(user_type.eql? "Receiver")
       @user = Receiver.new(user_params)
+    else
+      @user = Sender.new(user_params)
     end
 
     respond_to do |format|
@@ -68,19 +66,10 @@ class UsersController < ApplicationController
     end
   end
 
-  def get_user_type
-    @user.user_type
-  end
-
   private
 
-    # allow views to access user_type
-    def set_user_type
-      @user_type = user_type
-    end
-
     def user_type
-      User.user_types.include?(params[:type]) ? params[:type] : "User"
+      User.user_types.include?(params[:user_type]) ? params[:user_type] : "User"
     end
 
     def user_type_class
@@ -94,6 +83,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email, :password, :confirmation_password)
+      params.require(:user).permit(:name, :email, :password, :confirmation_password, :user_type)
     end
 end
