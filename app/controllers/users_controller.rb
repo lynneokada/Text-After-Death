@@ -27,7 +27,11 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(user_params)
+    if(user_type.eql? "sender")
+      @user = Sender.new(user_params)
+    else
+      @user = Receiver.new(user_params)
+    end
 
     respond_to do |format|
       if @user.save
