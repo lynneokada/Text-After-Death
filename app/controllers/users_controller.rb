@@ -27,10 +27,11 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    if(user_type.eql? "sender")
-      @user = Sender.new(user_params)
-    else
+    logger.debug "user_type is #{user_type}"
+    if(user_type.eql? "receiver")
       @user = Receiver.new(user_params)
+    else
+      @user = Sender.new(user_params)
     end
 
     respond_to do |format|
@@ -94,6 +95,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email, :password, :confirmation_password)
+      params.require(:user).permit(:name, :email, :password, :confirmation_password, :user_type)
     end
 end
