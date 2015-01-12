@@ -13,7 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20150109221806) do
 
-
   create_table "messages", force: true do |t|
     t.text     "content"
     t.string   "sender_id"
@@ -33,7 +32,6 @@ ActiveRecord::Schema.define(version: 20150109221806) do
     t.string   "user_type"
     t.string   "phone_number"
     t.string   "public_key"
-
   end
 
 end
