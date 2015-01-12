@@ -11,10 +11,12 @@
     </div>
   <% end %>
 
-  <div class="checkbox">
+  <div class="user-type">
     <%= f.label :user_type, class: 'form-control' %>
-    <%= f.check_box :user_type %>
-    <%= f.check_box :user_type %>
+    <%= radio_button_tag(:user_type, "sender")  %>
+    <%= label_tag(:user_type_sender, "I am a Sender")  %>
+    <%= radio_button_tag(:user_type, "receiver")  %>
+    <%= label_tag(:user_type_receiver, "I am a Receiver")  %>
   </div>
   <div class="field">
     <%= f.label :name %><br>

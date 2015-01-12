@@ -9,8 +9,6 @@ class User < ActiveRecord::Base
   #                   uniqueness: {case_sensitive: false}
   validates :password, presence: true
 
-
-
   self.inheritance_column = :user_type
 
   # We will need a way to know which types with subclass the User model
