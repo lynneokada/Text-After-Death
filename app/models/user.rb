@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   has_secure_password
   validates :password, length: { minimum: 6 }
 
-  self.inheritance_column = :user_type
+  has_many :messages
 
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
@@ -38,12 +38,4 @@ class User < ActiveRecord::Base
     update_attribute(:remember_digest, nil)
   end
 
-  # We will need a way to know which types with subclass the User model
-  def self.user_types
-    %w(Sender Receiver)
-  end
-
 end
-
-class Sender < User; end
-class Receiver < User; end

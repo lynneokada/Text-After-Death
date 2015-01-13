@@ -14,12 +14,6 @@
         </div>
       <% end %>
 
-      <div class="user-type">
-        <%= radio_button_tag(:user_type, "sender")  %>
-        <%= label_tag(:user_type_sender, "I am a Sender")  %>
-        <%= radio_button_tag(:user_type, "receiver")  %>
-        <%= label_tag(:user_type_receiver, "I am a Receiver")  %>
-      </div>
       <div class="field">
         <%= f.label :name %><br>
         <%= f.text_field :name, class: 'form-control' %>

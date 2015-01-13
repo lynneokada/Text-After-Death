@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = user_type_class.all
+    @users = User.all
   end
 
   # GET /users/1
@@ -25,11 +25,7 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    if(user_type.eql? "Receiver")
-      @user = Receiver.new(user_params)
-    else
-      @user = Sender.new(user_params)
-    end
+    @user = User.new(user_params)
 
     respond_to do |format|
       if @user.save
@@ -68,14 +64,6 @@ class UsersController < ApplicationController
 
   private
 
-    def user_type
-      User.user_types.include?(params[:user_type]) ? params[:user_type] : "User"
-    end
-
-    def user_type_class
-      user_type.constantize
-    end
-
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
@@ -83,6 +71,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email, :password, :confirmation_password, :user_type)
+      params.require(:user).permit(:name, :email, :password, :confirmation_password)
     end
 end
