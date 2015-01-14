@@ -2,9 +2,9 @@ Rails.application.routes.draw do
 
   get    'home'        => 'static_pages#home'
   get    'about'       => 'static_pages#about'
-  get    'receivers'   => 'receiver#index'
-  get    'receive'     => 'receiver#new'
-  post   'receive'     => 'receiver#create'
+  get    'receivers'   => 'receivers#index'
+  get    'receive'     => 'receivers#new'
+  post   'receive'     => 'receivers#create'
   get    'signup'      => 'users#new'
   get    'login'       => 'sessions#new'
   post   'login'       => 'sessions#create'
