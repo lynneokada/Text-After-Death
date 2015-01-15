@@ -4,4 +4,9 @@ class MessageTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
+
+  should belong_to(:user)
+  should validate_uniqueness_of(:content)
+  should validate_uniqueness_of(:date)
+
 end
