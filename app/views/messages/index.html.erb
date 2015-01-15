@@ -17,7 +17,7 @@
     <% @messages.each do |message| %>
       <tr>
         <td><%= message.content %></td>
-        <td><%= message.sender_id %></td>
+        <td><%= message.user_id %></td>
         <td><%= message.public_key %></td>
         <td><%= message.date %></td>
         <td><%= link_to 'Show', message %></td>

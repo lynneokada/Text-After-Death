@@ -2,13 +2,13 @@
 
 one:
   content: MyText
-  sender_id: MyString
+  user_id: MyString
   public_key: MyString
   date: 2015-01-08
 
 two:
   content: MyText
-  sender_id: MyString
+  user_id: MyString
   public_key: MyString
   date: 2015-01-08
   user_id: MyString
