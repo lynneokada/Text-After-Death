@@ -2,12 +2,12 @@
 
 one:
   name: MyString
-  email: MyString
+  email: test1@test.com
   password: MyString
   confirmation_password: MyString
 
 two:
   name: MyString
-  email: MyString
+  email: test2@test.com
   password: MyString
   confirmation_password: MyString
