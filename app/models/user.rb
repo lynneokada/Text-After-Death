@@ -16,6 +16,10 @@ class User < ActiveRecord::Base
                                   foreign_key: "receiver_id",
                                   dependent:   :destroy
 
+  has_many :active_relationships, class_name: "Relationship",
+                                  foreign_key: "receiver_id",
+                                  dependent: :destroy
+
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
     BCrypt::Password.create(string, cost:cost)

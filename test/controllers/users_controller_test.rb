@@ -20,7 +20,7 @@ class UsersControllerTest < ActionController::TestCase
     assert_no_difference('User.count') do
       post :create, user: { confirmation_password: @user.confirmation_password, email: @user.email, name: @user.name, password: @user.password }
     end
-
+    
     # assert_redirected_to user_path(assigns(:user))
   end
 
