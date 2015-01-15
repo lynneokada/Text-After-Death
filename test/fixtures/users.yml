@@ -11,3 +11,9 @@ two:
   email: test2@test.com
   password: MyString
   confirmation_password: MyString
+
+three:
+  name: MyString
+  email: test3@test.com
+  password: MyString
+  confirmation_password: MyString
