@@ -6,7 +6,7 @@ class MessageTest < ActiveSupport::TestCase
   # end
 
   should belong_to(:user)
-  should validate_uniqueness_of(:content)
-  should validate_uniqueness_of(:date)
+  should validate_presence_of(:content)
+  should validate_presence_of(:date)
 
 end
