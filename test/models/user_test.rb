@@ -6,9 +6,7 @@ class UserTest < ActiveSupport::TestCase
   # end
 
   should have_many(:messages)
-  should validate_uniqueness_of(:name)
   should validate_uniqueness_of(:email)
-  should validate_uniqueness_of(:password)
   should have_db_index(:email)
 
 end
