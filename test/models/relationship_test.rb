@@ -2,6 +2,10 @@ require 'test_helper'
 
 class RelationshipTest < ActiveSupport::TestCase
 
+  should have_one(:user_id)
+  should have_many(:receiver_id)
+  should have_one(:message_id)
+
   def setup
     @relationship = Relationship.new(user_id: 1, receiver_id: 1, message_id: 1)
   end
@@ -24,6 +28,5 @@ class RelationshipTest < ActiveSupport::TestCase
     @relationship.message_id = nil
     assert_not @relationship.valid?
   end
-
 
 end
