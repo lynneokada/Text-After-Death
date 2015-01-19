@@ -6,6 +6,7 @@
       <h1>
         <strong><%= @user.name %></strong>
       </h1>
+      <%= render :partial => "messages/form", :locals => {:message => Message.new} %>
 </aside>
 
 </div>
