@@ -1,9 +1,10 @@
 class Message < ActiveRecord::Base
   #relationships
-  belongs_to :user
-  have_many :receiver_id
+  has_many :receivers, through: :relationships, dependent: :destroy
+  belongs_to :user, through: :relationships, dependent: :destroy
 
   #validations
   validates :content, :presence => true
   validates :date, :presence => true
+
 end
