@@ -11,16 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150115070048) do
+ActiveRecord::Schema.define(version: 20150115211846) do
 
   create_table "messages", force: true do |t|
     t.text     "content"
+<<<<<<< HEAD
     t.string   "sender_id"
     t.string   "public_key"
+=======
+>>>>>>> 9ccfffe7a6e7779bd8eca3bcfbcca48b17d517c0
     t.date     "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "user_id"
   end
 
   create_table "receivers", force: true do |t|
@@ -31,6 +33,18 @@ ActiveRecord::Schema.define(version: 20150115070048) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "relationships", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "receiver_id"
+    t.integer  "message_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "relationships", ["message_id"], name: "index_relationships_on_message_id"
+  add_index "relationships", ["receiver_id"], name: "index_relationships_on_receiver_id"
+  add_index "relationships", ["user_id"], name: "index_relationships_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "name"

@@ -9,8 +9,16 @@ class User < ActiveRecord::Base
   has_secure_password
   validates :password, length: { minimum: 6 }
 
-  has_many :messages
-  has_many :receivers
+  has_many :messages, dependent: :destroy
+
+  has_many :active_relationships, class_name:  "Relationship",
+                                  foreign_key: "user_id",
+                                  foreign_key: "receiver_id",
+                                  dependent:   :destroy
+
+  has_many :active_relationships, class_name: "Relationship",
+                                  foreign_key: "receiver_id",
+                                  dependent: :destroy
 
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
