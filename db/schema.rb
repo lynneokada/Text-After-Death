@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20150115070048) do
 
   create_table "messages", force: true do |t|
     t.text     "content"
+    t.string   "sender_id"
     t.string   "public_key"
     t.date     "date"
     t.datetime "created_at", null: false
