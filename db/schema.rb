@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150115211846) do
+ActiveRecord::Schema.define(version: 20150119185007) do
 
   create_table "messages", force: true do |t|
     t.text     "content"
@@ -37,10 +37,6 @@ ActiveRecord::Schema.define(version: 20150115211846) do
     t.datetime "updated_at",  null: false
   end
 
-  add_index "relationships", ["message_id"], name: "index_relationships_on_message_id"
-  add_index "relationships", ["receiver_id"], name: "index_relationships_on_receiver_id"
-  add_index "relationships", ["user_id"], name: "index_relationships_on_user_id"
-
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
@@ -51,6 +47,7 @@ ActiveRecord::Schema.define(version: 20150115211846) do
     t.string   "user_type"
     t.string   "public_key"
     t.string   "password_digest"
+    t.string   "remember_digest"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

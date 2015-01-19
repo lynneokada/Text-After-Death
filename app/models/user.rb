@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  attr_accessor :remember_token
 
   # validations
   validates :name,  :presence => true, :length => { maximum: 50 }
