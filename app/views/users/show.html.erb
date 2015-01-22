@@ -6,6 +6,8 @@
       <h1>
         <strong><%= @user.name %></strong>
       </h1>
+
+      <%= render :partial => "relationships/form", :locals => {:relationship => Relationship.new} %>
       <%= render :partial => "messages/form", :locals => {:message => Message.new} %>
     </aside>
 
