@@ -15,4 +15,13 @@ class ReceiversController < ApplicationController
     end
   end
 
+  def show
+
+  end
+
+  private
+    def receiver_params
+      params.require(:receiver).permit(:name, :phonenumber)
+    end
+
 end

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get    'messages/:id'   => 'messages#show'
 
   resources :messages
+  resources :receivers
   resources :users
   resources :relationship
 

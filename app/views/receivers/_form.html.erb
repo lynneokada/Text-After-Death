@@ -13,7 +13,17 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :receiver
+    <%= f.label :name %>
+    <%= f.text_field, :name, class: 'form-control' %>
+  </div>
+
+  <div class='field'>
+    <%= f.label :phonenumber %>
+    <%= f.text_field, :phonenumber, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
   </div>
 
 <% end %>
