@@ -1,5 +1,9 @@
 class ReceiversController < ApplicationController
 
+  def index
+    @receivers = Receiver.all
+  end
+
   def new
     @receiver = Receiver.new
   end
@@ -16,7 +20,7 @@ class ReceiversController < ApplicationController
   end
 
   def show
-
+    @receiver = Receiver.find(params[:id])
   end
 
   private

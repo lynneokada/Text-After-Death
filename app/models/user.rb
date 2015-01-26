@@ -10,8 +10,8 @@ class User < ActiveRecord::Base
   has_secure_password
   validates :password, length: { minimum: 6 }
 
+  # relationships
   has_many :relationships
-
   has_many :messages, through: :relationships, dependent: :destroy
   has_many :receivers, through: :relationships, dependent: :destroy
 
