@@ -11,8 +11,7 @@ Rails.application.routes.draw do
   get    'users/:id/receivers'      => 'receivers#new'
 
   resources :messages
-  resources :receivers
   resources :users
   resources :relationship
-
+  resources :receivers
 end

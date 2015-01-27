@@ -1,7 +1,7 @@
 class ReceiversController < ApplicationController
 
   def index
-    @receivers = Receiver.all
+    @receivers = current_user.receivers
   end
 
   def new
@@ -11,8 +11,8 @@ class ReceiversController < ApplicationController
   def create
     @receiver = Receiver.new(receiver_params)
     if @receiver.save
-      flash[:success] = "Successfully registered...the waiting game begins"
-      redirect_to home_path
+      flash[:success] = "Successfully registered..."
+      redirect_to :controller => 'receiver', :action => 'new'
     else
       flash[:danger] = "nope"
       render 'new'
