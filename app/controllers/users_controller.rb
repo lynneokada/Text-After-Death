@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @receivers = @user.receivers
+    @message = Message.new
   end
 
   # GET /users/new
