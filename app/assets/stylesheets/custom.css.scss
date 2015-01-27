@@ -84,6 +84,10 @@ p {
     border-color: white;
   }
 
+  .navbar-inverse .navbar-nav > li > a {
+    color: white;
+  }
+
 #logo {
   float: left;
   margin-right: 10px;
@@ -179,9 +183,12 @@ input {
   margin-left: 0;
 }
 
-/* Polymer UI Elements */
+/* Polymer Elements */
+
 .my-button
 {
-  background: green;
-  color: yellow;
+  background: #22392F;
+  color: white;
+  width: 200px;
+
 }

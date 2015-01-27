@@ -5,7 +5,5 @@
     <p>Send personal text messages to your friends and family after death.</p>
   </h2>
 
-  <%= link_to "Sign up", signup_path, class: "btn btn-lg btn-primary" if !logged_in? %>
+  <paper-button class="my-button" raised><%= link_to "Sign up", signup_path if !logged_in? %></paper-button>
 </div>
-
-<paper-button class="my-button" raised>hello</paper-button>
