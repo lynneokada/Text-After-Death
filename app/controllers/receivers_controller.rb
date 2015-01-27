@@ -6,13 +6,14 @@ class ReceiversController < ApplicationController
 
   def new
     @receiver = Receiver.new
+    @receivers = current_user.receivers
   end
 
   def create
-    @receiver = Receiver.new(receiver_params)
+    @receiver = current_user.receivers.build(receiver_params)
     if @receiver.save
       flash[:success] = "Successfully registered..."
-      redirect_to :controller => 'receiver', :action => 'new'
+      redirect_to current_user
     else
       flash[:danger] = "nope"
       render 'new'

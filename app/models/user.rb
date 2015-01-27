@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   # relationships
   has_many :relationships
   has_many :messages, through: :relationships, dependent: :destroy
-  has_many :receivers, through: :relationships, dependent: :destroy
+  has_many :receivers
 
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
