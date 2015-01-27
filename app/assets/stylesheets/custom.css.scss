@@ -159,14 +159,19 @@ footer {
 /* forms */
 
 input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
+  border: 1px;
+  background-color: transparent;
   width: 100%;
-  margin-bottom: 15px;
   @include box_sizing;
+  outline: none;
 }
 
 input {
   height: auto !important;
+}
+
+label {
+  color: #22392F;
 }
 
 .checkbox {
