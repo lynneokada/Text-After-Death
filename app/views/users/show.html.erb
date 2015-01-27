@@ -7,7 +7,15 @@
         <strong><%= @user.name %></strong>
       </h1>
 
-      <%= render :partial => "relationships/form", :locals => {:relationship => Relationship.new} %>
+      <ul class="my-receivers">
+      <% @receivers.each do |receiver| %>
+        <li>
+         <%= check_box_tag(:receiver) %>
+         <%= label_tag(:receiver, receiver.name) %>
+        </li>
+      <% end %>
+      </ul>     
+
       <%= render :partial => "messages/form", :locals => {:message => Message.new} %>
     </aside>
 
