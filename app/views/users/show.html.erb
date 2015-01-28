@@ -6,15 +6,14 @@
       <h1>
         <strong><%= @user.name %></strong>
       </h1>
-
       <ul class="my-receivers">
       <% @receivers.each do |receiver| %>
         <li>
-         <%= check_box_tag(:receiver) %>
+         <%= check_box_tag(:receiver, receiver) %>
          <%= label_tag(:receiver, receiver.name) %>
         </li>
       <% end %>
-      </ul>     
+      </ul>
 
       <%= render :partial => "messages/form" %>
     </aside>

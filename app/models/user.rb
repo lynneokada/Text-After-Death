@@ -11,8 +11,7 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6 }
 
   # relationships
-  has_many :relationships
-  has_many :messages, through: :relationships, dependent: :destroy
+  has_many :messages, through: :receivers, dependent: :destroy
   has_many :receivers
 
   def User.digest(string)
