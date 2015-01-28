@@ -7,6 +7,8 @@
         <strong><%= @user.name %></strong>
       </h1>
 
+<% if @user.receivers.count > 0 %>
+
       <ul class="my-receivers">
       <% @receivers.each do |receiver| %>
         <li>
@@ -18,6 +20,12 @@
 
       <%= render :partial => "messages/form" %>
     </aside>
+
+<% else %>
+
+<p>You don't have any Reveivers yet. <%= link_to "Add a new one", :controller => 'receivers', :action => 'new' %>?
+
+<% end %>
 
     <%= render @user.messages %>
 
