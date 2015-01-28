@@ -12,6 +12,8 @@
   </div>
   <% end %>
 
+  Add new receiver to contacts
+
   <div class="field">
     <%= f.label :name %>
     <%= f.text_field :name, class: 'form-control' %>
@@ -23,7 +25,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <paper-button class="my-button" raised><%= f.submit %></paper-button>
   </div>
 
 <% end %>

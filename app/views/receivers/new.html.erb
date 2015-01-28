@@ -1,4 +1,12 @@
+<div class="row">
+  <aside class="col-md-4">
+    <%= render 'form' %>
+  </aside>
+</div>
+
+<div align="center">
 <ul class="my-receivers">
+
   <% @receivers.each do |receiver| %>
       <li>
         <%= receiver.name %>
@@ -6,5 +14,4 @@
       </li>
     <% end %>
 </ul>
-
-<%= render 'form' %>
+</div>
