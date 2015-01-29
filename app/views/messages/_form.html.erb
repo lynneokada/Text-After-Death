@@ -19,8 +19,10 @@
         <% current_user.receivers.each do |receiver| %>
 
           <li>
-            <paper-checkbox label=" " style="width:19px"></paper-checkbox>
-              <%= p.check_box(receiver.id) %>
+            <paper-checkbox change style="width:19px; vertical-align:middle">
+              <% p.check_box(receiver.id) %>
+            </paper-checkbox>
+
               <%= p.label(receiver.id, receiver.name) %>
           </li>
 
