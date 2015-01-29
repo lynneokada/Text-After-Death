@@ -26,6 +26,15 @@ class MessagesController < ApplicationController
   # POST /messages.json
   def create
     @message = Message.new(message_params)
+    @message_receivers = params[:message][:receivers]
+    @message_receiver_ids = Array.new 
+
+    @message_receivers.keys.each do |key|
+      if key.value == 1
+        @message_receivers_ids.add(key)
+    end
+
+    create_relationships(@message_receiver_ids, @message.id)
 
     respond_to do |format|
       if @message.save
@@ -70,6 +79,6 @@ class MessagesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def message_params
-    params.require(:message).permit(:content, :date)
+    params.require(:message).permit(:content, :date, :receivers)
   end
 end

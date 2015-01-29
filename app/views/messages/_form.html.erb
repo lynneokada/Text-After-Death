@@ -13,22 +13,22 @@
 
   <% if current_user.receivers.count > 0 %>
 
-    <ul class="my-receivers">
-      <% current_user.receivers.each do |receiver| %>
-        <li>
-          <%= check_box_tag(:receiver) %>
-          <%= label_tag(:receiver, receiver.name) %>
-        </li>
-      <% end %>
-    </ul>
+    <%= f.fields_for :receivers do |p|  %>
+   
+      <ul class="my-receivers">
+        <% current_user.receivers.each do |receiver| %>
+
+          <li>
+            <%= p.check_box(receiver.id) %>
+            <%= p.label(receiver.id, receiver.name) %>
+          </li>
+
+        <% end %>
+      </ul>
+
+    <% end %>
 
   <% end %>
-
-  <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_area :content %>
-  </div>
-
 
   <div class="field">
     <%= f.label :date %><br>
