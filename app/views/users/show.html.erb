@@ -7,15 +7,6 @@
         <strong><%= @user.name %></strong>
       </h1>
 
-      <ul class="my-receivers">
-      <% @receivers.each do |receiver| %>
-        <li>
-         <%= check_box_tag(:receiver, receiver) %>
-         <%= label_tag(:receiver, receiver.name) %>
-        </li>
-      <% end %>
-      </ul>
-
 <% if @user.receivers.count > 0 %>
 
 
@@ -29,6 +20,5 @@
 
 <% end %>
 
-    <%= render @user.messages %>
 
 </div>
