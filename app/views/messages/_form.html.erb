@@ -14,19 +14,25 @@
   <% if current_user.receivers.count > 0 %>
 
     <%= f.fields_for :receivers do |p|  %>
-   
+
       <ul class="my-receivers">
         <% current_user.receivers.each do |receiver| %>
 
           <li>
-            <%= p.check_box(receiver.id) %>
-            <%= p.label(receiver.id, receiver.name) %>
+            <paper-checkbox label=" " style="width:19px"></paper-checkbox>
+              <%= p.check_box(receiver.id) %>
+              <%= p.label(receiver.id, receiver.name) %>
           </li>
 
         <% end %>
       </ul>
 
     <% end %>
+
+    <div class="field">
+      <%= f.label :content %><br>
+      <%= f.text_area :content %>
+    </div>
 
   <% end %>
 
