@@ -7,18 +7,26 @@
         <strong><%= @user.name %></strong>
       </h1>
 
-<% if @user.receivers.count > 0 %>
+      <!-- RECEIVERS -->
+      <% if @user.receivers.count > 0 %>
 
+        <%= render :partial => "messages/form" %>
 
-      <%= render :partial => "messages/form" %>
+      <% else %>
 
-    </aside>
+        <p>You don't have any Reveivers yet. <%= link_to "Add a new one", :controller => 'receivers', :action => 'new' %>?
 
-<% else %>
+      <% end %>
+      <!-- END RECEIVERS -->
 
-<p>You don't have any Reveivers yet. <%= link_to "Add a new one", :controller => 'receivers', :action => 'new' %>?
+      <!-- MESSAGES -->
+      <% if @user.messages.count > 0 %>
 
-<% end %>
+      <%= render :partial => "messages/all_messages", object: @messages %>
 
+      <% end %>
+      <!-- END MESSAGES -->
 
+    </section>  
+  </aside>
 </div>
