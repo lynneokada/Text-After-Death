@@ -195,5 +195,19 @@ label {
   background: #22392F;
   color: white;
   width: 200px;
-
 }
+
+paper-checkbox::shadow #ink[checked] {
+  color: black;
+}
+
+paper-checkbox::shadow #checkbox.checked {
+  background-color: #22392F;
+  border-color: #22392F;
+}
+
+paper-checkbox::shadow #ink {
+    color: white;
+}
+
+/* Home Page Info */
