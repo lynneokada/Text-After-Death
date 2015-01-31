@@ -15,7 +15,7 @@
 
     <%= f.fields_for :receivers do |p|  %>
 
-      <ul class="my-receivers">
+      <ul class="contact-list" style="width:400px; height:100px; overflow:auto;">
         <% current_user.receivers.each do |receiver| %>
 
           <li style="padding-bottom:10px">
