@@ -38,7 +38,7 @@ text-align: left;
 
 .contact-list
 {
-  text-align: left;
+  padding-left: 0px;
 }
 
 .center {
@@ -177,6 +177,10 @@ footer {
 }
 
 /* forms */
+textarea
+{
+  height:98px;
+}
 
 input, textarea, select, .uneditable-input {
   border: 1px;
@@ -208,6 +212,14 @@ label {
   margin-left: 0;
 }
 
+#content
+{
+  border-width: 1px;
+  border-style: solid;
+  border-color: #22392F;
+  border-radius: 5px;
+  height:100px;
+}
 /* Polymer Elements */
 
 .my-button
