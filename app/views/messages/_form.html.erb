@@ -1,49 +1,47 @@
 <%= form_for(@message) do |f| %>
-  <% if @message.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@message.errors.count, "error") %> prohibited this message from being saved:</h2>
+<% if @message.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@message.errors.count, "error") %> prohibited this message from being saved:</h2>
 
-      <ul>
-        <% @message.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <% if current_user.receivers.count > 0 %>
-
-    <%= f.fields_for :receivers do |p|  %>
-
-      <ul class="contact-list" style="width:400px; height:100px; overflow:auto;">
-        <% current_user.receivers.each do |receiver| %>
-
-          <li style="padding-bottom:10px">
-            <!-- <paper-checkbox change style="width:19px; vertical-align:middle"> -->
-             <%= p.check_box(receiver.id) %>
-            <!-- </paper-checkbox> -->
-              <%= p.label(receiver.id, receiver.name) %>
-          </li>
-
-        <% end %>
-      </ul>
-
+  <ul>
+    <% @message.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
     <% end %>
+  </ul>
+</div>
+<% end %>
 
-    <div class="field">
-      <%= f.label :content %><br>
-      <div id="content" ><%= f.text_area :content %></div>
-    </div>
+<% if current_user.receivers.count > 0 %>
+
+<%= f.fields_for :receivers do |p|  %>
+
+<ul class="contact-list" style="width:400px; height:100px; overflow:auto;">
+  <% current_user.receivers.each do |receiver| %>
+
+  <li style="padding-bottom:10px">
+      <%= p.check_box(receiver.id) %>
+      <%= p.label(receiver.id, receiver.name) %>
+  </li>
 
   <% end %>
+</ul>
 
-  <div class="field">
-    <%= f.label :date %><br>
-    <%= f.date_select :date %>
-  </div>
+<% end %>
 
-  <div class="actions">
-    <paper-button class="my-button" raised><%= f.submit %></paper-button>
-  </div>
+<div class="field">
+  <%= f.label :content %><br>
+  <div id="content" ><%= f.text_area :content %></div>
+</div>
+
+<% end %>
+
+<div class="field">
+  <%= f.label :date %><br>
+  <%= f.date_select :date %>
+</div>
+
+<div class="actions">
+  <paper-button class="my-button" raised><%= f.submit %></paper-button>
+</div>
 
 <% end %>
