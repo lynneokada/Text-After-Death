@@ -19,14 +19,17 @@
         <% end %>
         <!-- END RECEIVERS -->
 
-        <!-- MESSAGES -->
-        <% if @user.messages.count > 0 %>
-
-        <%= render :partial => "messages/all_messages", object: @messages %>
-
-        <% end %>
-        <!-- END MESSAGES -->
-
       </section>
     </aside>
+
+    <!-- MESSAGES -->
+    <div id="my-messages">
+      <% if @user.messages.count > 0 %>
+      <div>
+        <%= render :partial => "messages/all_messages", object: @messages %>
+      </div>
+      <% end %>
+    </div>
+    <!-- END MESSAGES -->
+
   </div>

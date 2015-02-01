@@ -2,16 +2,21 @@
   <aside class="col-md-4">
     <%= render 'form' %>
   </aside>
-</div>
+    <table class="my-receivers">
+        <thead>
+          <tr>
+          <td>Receiver</td>
+          <td>Phone Number</td>
+          </tr>
+        </thead>
 
-<div align="center">
-<ul class="my-receivers">
-
-  <% @receivers.each do |receiver| %>
-      <li>
-        <%= receiver.name %>
-        <%= receiver.phonenumber %>
-      </li>
-    <% end %>
-</ul>
+        <tbody>
+        <% @receivers.each do |receiver| %>
+          <tr>
+          <td><%= receiver.name %></td>
+          <td><%= receiver.phonenumber %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
 </div>

@@ -7,7 +7,6 @@ class Message < ActiveRecord::Base
   # validations
   validates :content, :presence => true
   validates :date, :presence => true
-  validates :receivers, :presence => true
   accepts_nested_attributes_for :relationships
 
 end
