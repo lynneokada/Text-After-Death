@@ -13,6 +13,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @receivers = @user.receivers
     @message = Message.new
+    @messages = @user.messages
   end
 
   # GET /users/new

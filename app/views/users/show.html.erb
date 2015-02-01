@@ -3,21 +3,30 @@
 <div class="row">
   <aside class="col-md-4">
     <section>
-      <h1 id="username">
+      <h1>
         <strong><%= @user.name %></strong>
       </h1>
 
-<% if @user.receivers.count > 0 %>
+      <!-- RECEIVERS -->
+      <% if @user.receivers.count > 0 %>
 
       <%= render :partial => "messages/form" %>
 
+      <% else %>
+
+      <p>You don't have any Reveivers yet. <%= link_to "Add a new one", :controller => 'receivers', :action => 'new' %>?
+
+        <% end %>
+        <!-- END RECEIVERS -->
+
+        <!-- MESSAGES -->
+        <% if @user.messages.count > 0 %>
+
+        <%= render :partial => "messages/all_messages", object: @messages %>
+
+        <% end %>
+        <!-- END MESSAGES -->
+
+      </section>
     </aside>
-
-<% else %>
-
-<p>You don't have any Receivers yet. <%= link_to "Add a new one", :controller => 'receivers', :action => 'new' %>?
-
-<% end %>
-
-
-</div>
+  </div>
