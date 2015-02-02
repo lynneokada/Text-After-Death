@@ -14,6 +14,16 @@ class ReceiversController < ApplicationController
     if @receiver.save
       flash[:success] = "Successfully registered..."
       redirect_to :controller => 'receivers', :action => 'new'
+
+      # Instantiate a Twilio client
+      client = Twilio::REST::Client.new(TWILIO_CONFIG['sid'], TWILIO_CONFIG['token'])
+
+      # Create and send an SMS message
+      client.account.sms.messages.create(
+      from: TWILIO_CONFIG['from'],
+      to: @receiver.phonenumber,
+      body: "You have been signed up for the After Text Service."
+      )
     else
       flash[:danger] = "nope"
       render 'new'

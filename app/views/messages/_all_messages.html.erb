@@ -2,7 +2,7 @@
 
 <h1>Messages</h1>
 
-<table>
+<table align="center">
   <thead>
     <tr>
       <th>Date</th>
@@ -13,7 +13,11 @@
 
   <tbody>
     <% all_messages.each do |message| %>
-      <tr>
+      <tr style="border-width: 1px;
+      border-style: solid;
+      border-color: #22392F;
+      border-radius: 5px;
+      height:50px;">
         <td><%= message.date %></td>
         <td>
           Receiver Names
