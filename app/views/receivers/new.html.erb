@@ -2,7 +2,7 @@
   <aside class="col-md-4">
     <%= render 'form' %>
   </aside>
-    <table class="my-receivers">
+    <table class="my-receivers" align="center">
         <thead>
           <tr>
           <td>Receiver</td>
@@ -11,11 +11,12 @@
         </thead>
 
         <tbody>
+          <h2>Receivers</h2>
         <% @receivers.each do |receiver| %>
           <tr>
-          <td><%= receiver.name %></td>
-          <td><%= receiver.phonenumber %></td>
-        </tr>
+            <td><br><%= receiver.name %></td>
+            <td><br><%= receiver.phonenumber %></td>
+          </tr>
         <% end %>
       </tbody>
     </table>
